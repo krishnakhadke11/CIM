@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns:cim="http://iec.ch/TC57/2009/CIM-schema-cim14#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <cim:Substation rdf:ID="POPLAR-TENT-RET">
+        <cim:IdentifiedObject_name>POPLAR TENT RET</cim:IdentifiedObject_name>
+        <cim:Substation_PermitAreaId>CE</cim:Substation_PermitAreaId>
+        <cim:Substation_Impedance_R0>2.9198</cim:Substation_Impedance_R0>
+        <cim:Substation_Impedance_XB>20.539</cim:Substation_Impedance_XB>
+        <cim:Substation_Impedance_R1>1.2907</cim:Substation_Impedance_R1>
+        <cim:Substation_Impedance_X1>5.483</cim:Substation_Impedance_X1>
+        <cim:Substation_Impedance_R2>0</cim:Substation_Impedance_R2>
+        <cim:Substation_Impedance_X2>0</cim:Substation_Impedance_X2>
+    </cim:Substation>
+    <cim:Switch rdf:ID="e5fdf19b-58c0-420d-afc5-eccb1fdd5403">
+        <cim:IdentifiedObject_name>TIE_1-2_HT</cim:IdentifiedObject_name>
+        <cim:Switch_FromNode rdf:resource="3a343a61-fe78-41aa-8722-e9f38af8c5df"/>
+        <cim:Switch_ToNode rdf:resource="e3e89003-207f-462d-a1e8-84561af18a62"/>
+        <cim:Switch_Phase>ABC</cim:Switch_Phase>
+        <cim:Switch_NormallyOpen>false</cim:Switch_NormallyOpen>
+        <cim:Switch_ComputeFlows>true</cim:Switch_ComputeFlows>
+    </cim:Switch>
+    <cim:Breaker rdf:ID="bd0afd0a-74a1-4391-ab74-8df71b609aa0">
+        <cim:IdentifiedObject_name>BK-1_LT</cim:IdentifiedObject_name>
+        <cim:Breaker_FromNode rdf:resource="f4fde2e2-4342-45c4-9fa8-74e0a1e496a1"/>
+        <cim:Breaker_ToNode rdf:resource="d7593eb3-9068-4865-6968-140b63dd4elc"/>
+        <cim:Breaker_Phase>ABC</cim:Breaker_Phase>
+        <cim:Breaker_LabelPlacement>
+            <cim:LabelPlacement_X>8780</cim:LabelPlacement_X>
+            <cim:LabelPlacement_Y>-6740</cim:LabelPlacement_Y>
+        </cim:Breaker_LabelPlacement>
+        <cim:Breaker_NormallyOpen>false</cim:Breaker_NormallyOpen>
+        <cim:Breaker_ComputeFlows>true</cim:Breaker_ComputeFlows>
+    </cim:Breaker>
+    <cim:Bus rdf:ID="54aec07c-131c-4992-b727-b1f3dc38775a">
+        <cim:IdentifiedObject_name/>
+        <cim:Bus_Node rdf:resource="fd1651f7-b5d6-4190-ad78-6a1405876f6e"/>
+        <cim:Bus_VoltUnit>-99</cim:Bus_VoltUnit>
+        <cim:Bus_SymbolPlacement>
+            <cim:SymbolPlacement_X>1240</cim:SymbolPlacement_X>
+            <cim:SymbolPlacement_Y>-12660</cim:SymbolPlacement_Y>
+        </cim:Bus_SymbolPlacement>
+    </cim:Bus>
+</rdf:RDF>

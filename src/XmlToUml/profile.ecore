@@ -1,0 +1,2616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="profile" nsURI="http://iec.ch/TC57/2007/profile#" nsPrefix="profile">
+  <eClassifiers xsi:type="ecore:EClass" name="ACDCConverter">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCConverter"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ACDCConverter"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ACDCConverterDCTerminal" eSuperTypes="#//DCBaseTerminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A DC electrical connection point at the AC/DC converter. The AC/DC converter is electrically connected also to the AC side. The AC connection is inherited from the AC conducting equipment in the same way as any other AC equipment. The AC/DC converter DC terminal is separate from generic DC terminal to restrict the connection with the AC side to AC/DC converter and so that no other DC conducting equipment can be connected to the AC side."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCConverterDCTerminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ACDCConverterDCTerminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="polarity" eType="#//DCPolarityKind"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the normal network polarity condition. Depending on the converter configuration the value shall be set as follows:&#xD;&#xA;- For a monopole with two converter terminals use DCPolarityKind �positive� and �negative�.&#xD;&#xA;- For a bi-pole or symmetric monopole with three converter terminals use DCPolarityKind �positive�, �middle� and �negative�."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCConverterDCTerminal.polarity"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="polarity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCConductingEquipment"
+        eType="#//ACDCConverter" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A DC converter terminal belong to an DC converter."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCConverterDCTerminal.DCConductingEquipment"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DCConductingEquipment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ACDCTerminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCTerminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ACDCTerminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connected" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The connected status is related to a bus-branch model and the topological node to terminal relation.  True implies the terminal is connected to the related topological node and false implies it is not.&#xD;&#xA;In a bus-branch model, the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the topological node to terminal relation. A valid case is that conducting equipment can be connected in one end and open in the other. In particular for an AC line segment, where the reactive line charging can be significant, this is a relevant case."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCTerminal.connected"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="connected"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sequenceNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the &quot;starting point&quot; for a two terminal branch."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCTerminal.sequenceNumber"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="sequenceNumber"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busNameMarker" eType="#//BusNameMarker"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The bus name marker used to name the bus (topological node)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACDCTerminal.BusNameMarker"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="BusNameMarker"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ACLineSegment" eSuperTypes="#//Conductor">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.&#xD;&#xA;For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.&#xD;&#xA;The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ACLineSegment"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b0ch" eType="#//Susceptance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.b0ch"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="b0ch"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bch" eType="#//Susceptance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.bch"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="bch"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="g0ch" eType="#//Conductance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.g0ch"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="g0ch"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gch" eType="#//Conductance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.gch"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="gch"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="#//Resistance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence series resistance of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.r"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="r"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" eType="#//Resistance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence series resistance of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.r0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="r0"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortCircuitEndTemperature"
+        eType="#//Temperature" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Maximum permitted temperature at the end of SC for the calculation of minimum short-circuit currents. Used for short circuit data exchange according to IEC 60909."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.shortCircuitEndTemperature"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="shortCircuitEndTemperature"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="#//Reactance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence series reactance of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.x"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="x"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" eType="#//Reactance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence series reactance of the entire line section."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.x0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="x0"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineGroundingAction" eType="#//GroundAction"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Ground action involving clamp usage (for the case when the ground is applied along the line segment instead of at its terminals)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.LineGroundingAction"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="LineGroundingAction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineJumpingAction" eType="#//JumperAction"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Jumper action involving clamp usage (for the case when the jumper is applied along the line segment instead of at its terminals)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.LineJumpingAction"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="LineJumpingAction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perLengthImpedance" eType="#//PerLengthImpedance"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Per-length impedance of this line segment."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.PerLengthImpedance"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="PerLengthImpedance"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wireSpacingInfo" eType="#//WireSpacingInfo"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The wire spacing information that applies to this AC line segment"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ACLineSegment.WireSpacingInfo"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="WireSpacingInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ActivePower" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Product of RMS value of the voltage and the RMS value of the in-phase component of the current."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ActivePower"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivePower"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ActivePowerChangeRate" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Rate of change of active power per time."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ActivePowerChangeRate"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivePowerChangeRate"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ActivePowerChangeRateObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivePowerChangeRate:Object"/>
+      <details key="baseType" value="ActivePowerChangeRate"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ActivePowerObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivePower:Object"/>
+      <details key="baseType" value="ActivePower"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="AngleDegrees" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Measurement of angle in degrees."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#AngleDegrees"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AngleDegrees"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="AngleDegreesObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AngleDegrees:Object"/>
+      <details key="baseType" value="AngleDegrees"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Breaker" eSuperTypes="#//ProtectedSwitch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Breaker"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Breaker"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inTransitTime" eType="#//Seconds"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The transition time from open to close."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Breaker.inTransitTime"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="inTransitTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bushing">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Bushing asset."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Bushing"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Bushing"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusNameMarker">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Used to apply user standard names to TopologicalNodes. Associated with one or more terminals that are normally connected with the bus name.    The associated terminals are normally connected by non-retained switches. For a ring bus station configuration, all BusbarSection terminals in the ring are typically associated.   For a breaker and a half scheme, both BusbarSections would normally be associated.  For a ring bus, all BusbarSections would normally be associated.  For a &quot;straight&quot; busbar configuration, normally only the main terminal at the BusbarSection would be associated."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#BusNameMarker"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="BusNameMarker"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Circuit" eSuperTypes="#//EquipmentContainer">
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Circuit"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Circuit"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Classification" instanceClassName="java.math.BigInteger">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Classification of level.  Specify as 1..n, with 1 being the most detailed, highest priority, etc as described on the attribute using this data type."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Classification"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Classification"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#integer"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeSwitch" eSuperTypes="#//Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A model of a set of individual Switches normally enclosed within the same cabinet and possibly with interlocks that restrict the combination of switch positions. These are typically found in medium voltage distribution networks.&#xD;&#xA;A CompositeSwitch could represent a Ring-Main-Unit (RMU), or pad-mounted switchgear, with primitive internal devices such as an internal bus-bar plus 3 or 4 internal switches each of which may individually be open or closed. A CompositeSwitch and a set of contained Switches can also be used to represent a multi-position switch e.g. a switch that can connect a circuit to Ground, Open or Busbar."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#CompositeSwitch"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CompositeSwitch"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeSwitchType" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An alphanumeric code that can be used as a reference to extra information such as the description of the interlocking scheme if any."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#CompositeSwitch.compositeSwitchType"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="compositeSwitchType"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Conductance" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Conductance"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Conductance"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConductanceObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Conductance:Object"/>
+      <details key="baseType" value="Conductance"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConductingEquipment" eSuperTypes="#//Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ConductingEquipment"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ConductingEquipment"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conductor" eSuperTypes="#//ConductingEquipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Conductor"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Conductor"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="#//Length"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Segment length for calculating line section capabilities."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Conductor.length"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="length"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectivityNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ConnectivityNode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ConnectivityNode"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectivityNodeContainer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A base class for all objects that may contain connectivity nodes or topological nodes."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ConnectivityNodeContainer"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ConnectivityNodeContainer"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CurrentFlow" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#CurrentFlow"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CurrentFlow"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CurrentFlowObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CurrentFlow:Object"/>
+      <details key="baseType" value="CurrentFlow"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cut" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A cut separates a line segment into two parts. The cut appears as a switch inserted between these two parts and connects them together. As the cut is normally open there is no galvanic connection between the two line segment parts. But it is possible to close the cut to get galvanic connection.&#xD;&#xA;The cut terminals are oriented towards the line segment terminals with the same sequence number. Hence the cut terminal with sequence number equal to 1 is oriented to the line segment's terminal with sequence number equal to 1.&#xD;&#xA;The cut terminals also act as connection points for jumpers and other equipment, e.g. a mobile generator. To enable this, connectivity nodes are placed at the cut terminals. Once the connectivity nodes are in place any conducting equipment can be connected at them."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Cut"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Cut"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lengthFromTerminal1" eType="#//Length"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The length to the place where the cut is located starting from side one of the cut line segment, i.e. the line segment Terminal with sequenceNumber equal to 1."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Cut.lengthFromTerminal1"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="lengthFromTerminal1"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aCLineSegment" eType="#//ACLineSegment"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The line segment to which the cut is applied."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Cut.ACLineSegment"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ACLineSegment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cutAction" eType="#//CutAction"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Action taken with this cut."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Cut.CutAction"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CutAction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CutAction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Action on cut as a switching step."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#CutAction"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CutAction"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCBaseTerminal" eSuperTypes="#//ACDCTerminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An electrical connection point at a piece of DC conducting equipment. DC terminals are connected at one physical DC node that may have multiple DC terminals connected. A DC node is similar to an AC connectivity node. The model requires that DC connections are distinct from AC connections."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCBaseTerminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCBaseTerminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCNode" eType="#//DCNode"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The DC connectivity node to which this DC base terminal connects with zero impedance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCBaseTerminal.DCNode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DCNode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCTopologicalNode" eType="#//DCTopologicalNode"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="See association end Terminal.TopologicalNode."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCBaseTerminal.DCTopologicalNode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DCTopologicalNode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCConductingEquipment" eSuperTypes="#//Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The parts of the DC power system that are designed to carry current or that are conductively connected through DC terminals."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCConductingEquipment"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCConductingEquipment"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="DC nodes are points where terminals of DC conducting equipment are connected together with zero impedance."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCNode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCNode"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DCPolarityKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Polarity for DC circuits."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCPolarityKind"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCPolarityKind"/>
+    </eAnnotations>
+    <eLiterals name="middle">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Middle pole. The converter terminal is the midpoint in a bipolar or symmetric monopole configuration. The midpoint can be grounded and/or have a metallic return."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="negative" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Negative pole. The converter terminal is intended to operate at a negative voltage relative the midpoint or positive terminal."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="positive" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive pole. The converter terminal is intended to operate at a positive voltage relative the midpoint or negative terminal."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DCPolarityKindObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCPolarityKind:Object"/>
+      <details key="baseType" value="DCPolarityKind"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCTerminal" eSuperTypes="#//DCBaseTerminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An electrical connection point to generic DC conducting equipment."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCTerminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCTerminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dCConductingEquipment"
+        eType="#//DCConductingEquipment" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An DC  terminal belong to a DC conducting equipment."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCTerminal.DCConductingEquipment"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DCConductingEquipment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCTopologicalNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="DC bus."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#DCTopologicalNode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DCTopologicalNode"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Disconnector" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Disconnector"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Disconnector"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The parts of a power system that are physical devices, electronic or mechanical."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Equipment"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The aggregate flag provides an alternative way of representing an aggregated (equivalent) element. It is applicable in cases when the dedicated classes for equivalent equipment do not have all of the attributes necessary to represent the required level of detail.  In case the flag is set to �true� the single instance of equipment represents multiple pieces of equipment that have been modelled together as an aggregate equivalent obtained by a network reduction procedure. Examples would be power transformers or synchronous machines operating in parallel modelled as a single aggregate power transformer or aggregate synchronous machine.&#xD;&#xA;The attribute is not used for EquivalentBranch, EquivalentShunt and EquivalentInjection."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment.aggregate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="aggregate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inService" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment.inService"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="inService"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="networkAnalysisEnabled"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The equipment is enabled to participate in network analysis.  If unspecified, the value is assumed to be true."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment.networkAnalysisEnabled"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="networkAnalysisEnabled"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="normallyInService" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the availability of the equipment under normal operating conditions. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment.normallyInService"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="normallyInService"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equipmentContainer" eType="#//EquipmentContainer"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Container of this equipment."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Equipment.EquipmentContainer"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="EquipmentContainer"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EquipmentContainer" eSuperTypes="#//ConnectivityNodeContainer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A modelling construct to provide a root class for containing equipment."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#EquipmentContainer"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="EquipmentContainer"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feeder" eSuperTypes="#//EquipmentContainer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A collection of equipment for organizational purposes, used for grouping distribution resources.&#xD;&#xA;The organization a feeder does not necessarily reflect connectivity or current operation state."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Feeder"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Feeder"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flowgate">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A flowgate, is single or group of transmission elements intended to model MW flow impact relating to transmission limitations and transmission service usage."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Flowgate"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Flowgate"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fuse" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Fuse"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Fuse"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneratingUnit" eSuperTypes="#//Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GeneratingUnit"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allocSpinResP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The planned unused capacity (spinning reserve) which can be used to support emergency load."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.allocSpinResP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="allocSpinResP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoCntrlMarginP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The planned unused capacity which can be used to support automatic control overruns."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.autoCntrlMarginP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="autoCntrlMarginP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value shall be between the operating low and high limits."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.baseP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="baseP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlDeadband" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.controlDeadband"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="controlDeadband"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPulseHigh" eType="#//Seconds"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Pulse high limit which is the largest control pulse that the unit can respond to."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.controlPulseHigh"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="controlPulseHigh"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlPulseLow" eType="#//Seconds"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Pulse low limit which is the smallest control pulse that the unit can respond to."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.controlPulseLow"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="controlPulseLow"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlResponseRate" eType="#//ActivePowerChangeRate"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.controlResponseRate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="controlResponseRate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="efficiency" eType="#//PerCent"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.efficiency"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="efficiency"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genControlMode" eType="#//GeneratorControlMode"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The unit control mode."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.genControlMode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="genControlMode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genControlSource" eType="#//GeneratorControlSource"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The source of controls for a generating unit.  Defines the control status of the generating unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.genControlSource"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="genControlSource"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="governorMPL" eType="#//PU"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Governor motor position limit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.governorMPL"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="governorMPL"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="governorSCD" eType="#//PerCent"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Governor Speed Changer Droop.   This is the change in generator power output divided by the change in frequency normalized by the nominal power of the generator and the nominal frequency and expressed in percent and negated. A positive value of speed change droop provides additional generator output upon a drop in frequency."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.governorSCD"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="governorSCD"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="highControlLimit" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="High limit for secondary (AGC) control."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.highControlLimit"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="highControlLimit"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Default initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.initialP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="initialP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longPF" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Generating unit long term economic participation factor."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.longPF"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="longPF"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowControlLimit" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Low limit for secondary (AGC) control."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.lowControlLimit"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="lowControlLimit"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerRampRate" eType="#//ActivePowerChangeRate"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The normal maximum rate the generating unit active power output can be lowered by control actions."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.lowerRampRate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="lowerRampRate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxEconomicP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Maximum high economic active power limit, that should not exceed the maximum operating active power limit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.maxEconomicP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="maxEconomicP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumAllowableSpinningReserve"
+        eType="#//ActivePower" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.maximumAllowableSpinningReserve"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="maximumAllowableSpinningReserve"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOperatingP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the maximum operating active power limit the dispatcher can enter for this unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.maxOperatingP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="maxOperatingP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minEconomicP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Low economic active power limit that shall be greater than or equal to the minimum operating active power limit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.minEconomicP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="minEconomicP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumOffTime" eType="#//Seconds"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Minimum time interval between unit shutdown and startup."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.minimumOffTime"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="minimumOffTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOperatingP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the minimum operating active power limit the dispatcher can enter for this unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.minOperatingP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="minOperatingP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelDetail" eType="#//Classification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Detail level of the generator model data."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.modelDetail"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="modelDetail"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nominalP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).&#xD;&#xA;The attribute shall be a positive value equal to or less than RotatingMachine.ratedS."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.nominalP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="nominalP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="normalPF" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.normalPF"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="normalPF"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="penaltyFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.penaltyFactor"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="penaltyFactor"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="raiseRampRate" eType="#//ActivePowerChangeRate"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The normal maximum rate the generating unit active power output can be raised by control actions."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.raiseRampRate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="raiseRampRate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedGrossMaxP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The unit's gross rated maximum capacity (book value).&#xD;&#xA;The attribute shall be a positive value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.ratedGrossMaxP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ratedGrossMaxP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedGrossMinP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid.&#xD;&#xA;The attribute shall be a positive value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.ratedGrossMinP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ratedGrossMinP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedNetMaxP" eType="#//ActivePower"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.&#xD;&#xA;The attribute shall be a positive value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.ratedNetMaxP"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ratedNetMaxP"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortPF" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Generating unit short term economic participation factor."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.shortPF"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="shortPF"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startupCost" eType="#//Money">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The initial startup cost incurred for each start of the GeneratingUnit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.startupCost"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="startupCost"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startupTime" eType="#//Seconds"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.startupTime"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="startupTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tieLinePF" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Generating unit economic participation factor."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.tieLinePF"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="tieLinePF"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalEfficiency" eType="#//PerCent"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The efficiency of the unit in converting the fuel into electrical energy."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.totalEfficiency"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="totalEfficiency"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableCost" eType="#//Money">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The variable cost component of production per unit of ActivePower."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.variableCost"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="variableCost"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genUnitOpSchedule" eType="#//GenUnitOpSchedule"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A generating unit may have an operating schedule, indicating the planned operation of the unit."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratingUnit.GenUnitOpSchedule"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="GenUnitOpSchedule"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GeneratorControlMode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Unit control modes."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratorControlMode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GeneratorControlMode"/>
+    </eAnnotations>
+    <eLiterals name="pulse">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Pulse control mode."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="setpoint" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Setpoint control mode."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="GeneratorControlModeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GeneratorControlMode:Object"/>
+      <details key="baseType" value="GeneratorControlMode"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GeneratorControlSource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The source of controls for a generating unit."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GeneratorControlSource"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GeneratorControlSource"/>
+    </eAnnotations>
+    <eLiterals name="offAGC">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Off of automatic generation control (AGC)."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="onAGC" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="On automatic generation control (AGC)."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="plantControl" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Plant is controlling."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="unavailable" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Not available."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="GeneratorControlSourceObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GeneratorControlSource:Object"/>
+      <details key="baseType" value="GeneratorControlSource"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenUnitOpSchedule">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The generating unit's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The X-axis represents absolute time. The Y1-axis represents the status (0=off-line and unavailable: 1=available: 2=must run: 3=must run at fixed power value: etc.). The Y2-axis represents the must run fixed power value where required."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GenUnitOpSchedule"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GenUnitOpSchedule"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GroundAction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Action on ground as a switching step."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GroundAction"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GroundAction"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GroundDisconnector" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from ground."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#GroundDisconnector"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GroundDisconnector"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jumper" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can potentially be modelled by other equipment types."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Jumper"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Jumper"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jumperAction" eType="#//JumperAction"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Action taken with this jumper."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Jumper.JumperAction"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="JumperAction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JumperAction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Action on jumper as a switching step."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#JumperAction"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="JumperAction"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Length" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Unit of length. It shall be a positive value or zero."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Length"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Length"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LengthObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Length:Object"/>
+      <details key="baseType" value="Length"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadBreakSwitch" eSuperTypes="#//ProtectedSwitch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#LoadBreakSwitch"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="LoadBreakSwitch"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MktSwitch" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Subclass of IEC 61970:Wires:Switch."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#MktSwitch"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MktSwitch"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MktTerminal" eSuperTypes="#//Terminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Subclass of IEC61970:Core:Terminal."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#MktTerminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MktTerminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowgate" eType="#//Flowgate"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#MktTerminal.Flowgate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Flowgate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Money" instanceClassName="java.math.BigDecimal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Amount of money."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Money"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Money"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#decimal"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PerCent" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PerCent"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PerCent"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PerCentObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PerCent:Object"/>
+      <details key="baseType" value="PerCent"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PerLengthImpedance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Common type for per-length impedance electrical catalogues."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PerLengthImpedance"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PerLengthImpedance"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PhaseCode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.&#xD;&#xA;Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.&#xD;&#xA;The integer values are from IEC 61968-9 to support revenue metering applications."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PhaseCode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PhaseCode"/>
+    </eAnnotations>
+    <eLiterals name="A">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phase A."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="AB" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A and B."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ABC" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A, B, and C."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ABCN" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A, B, C, and N."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ABN" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A, B, and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="AC" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A and C."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ACN" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A, C and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="AN" value="7">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases A and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="B" value="8">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phase B."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="BC" value="9">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases B and C."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="BCN" value="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases B, C, and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="BN" value="11">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases B and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="C" value="12">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phase C."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CN" value="13">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Phases C and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="N" value="14">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Neutral phase."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="X" value="15">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Unknown non-neutral phase."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="XN" value="16">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Unknown non-neutral phase plus neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="XY" value="17">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Two unknown non-neutral phases."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="XYN" value="18">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Two unknown non-neutral phases plus neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="none" value="19">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="No phases specified."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s1" value="20">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phase 1."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s12" value="21">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phase 1 and 2."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s12N" value="22">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phases 1, 2, and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s1N" value="23">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phase 1 and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s2" value="24">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phase 2."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="s2N" value="25">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary phase 2 and neutral."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PhaseCodeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PhaseCode:Object"/>
+      <details key="baseType" value="PhaseCode"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PowerTransformer" eSuperTypes="#//ConductingEquipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).&#xD;&#xA;A power transformer may be composed of separate transformer tanks that need not be identical.&#xD;&#xA;A power transformer can be modelled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.&#xD;&#xA;The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PowerTransformer"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beforeShCircuitHighestOperatingCurrent"
+        eType="#//CurrentFlow" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The highest operating current (Ib in IEC 60909-0) before short circuit (depends on network configuration and relevant reliability philosophy). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.beforeShCircuitHighestOperatingCurrent"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="beforeShCircuitHighestOperatingCurrent"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beforeShCircuitHighestOperatingVoltage"
+        eType="#//Voltage" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The highest operating voltage (Ub in IEC 60909-0) before short circuit. It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is worst case voltage on the low side winding (3.7.1 of IEC 60909:2001). Used to define operating conditions."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.beforeShCircuitHighestOperatingVoltage"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="beforeShCircuitHighestOperatingVoltage"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beforeShortCircuitAnglePf"
+        eType="#//AngleDegrees" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The angle of power factor before short circuit (phib in IEC 60909-0). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is the worst case power factor. Used to define operating conditions."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.beforeShortCircuitAnglePf"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="beforeShortCircuitAnglePf"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="highSideMinOperatingU"
+        eType="#//Voltage" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The minimum operating voltage (uQmin in IEC 60909-0) at the high voltage side (Q side) of the unit transformer of the power station unit. A value well established from long-term operating experience of the system. It is used for calculation of the impedance correction factor KG defined in IEC 60909-0."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.highSideMinOperatingU"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="highSideMinOperatingU"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPartOfGeneratorUnit"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909.  It has an impact on how the correction factors are calculated for transformers, since the transformer is not necessarily part of a synchronous machine and generating unit. It is not always possible to derive this information from the model. This is why the attribute is necessary."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.isPartOfGeneratorUnit"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="isPartOfGeneratorUnit"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationalValuesConsidered"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.operationalValuesConsidered"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="operationalValuesConsidered"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorGroup" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Vector group of the transformer for protective relaying, e.g., Dyn1. For unbalanced transformers, this may not be simply determined from the constituent winding connections and phase angle displacements.&#xD;&#xA;The vectorGroup string consists of the following components in the order listed: high voltage winding connection, mid voltage winding connection (for three winding transformers), phase displacement clock number from 0 to 11,  low voltage winding connection&#xD;&#xA;phase displacement clock number from 0 to 11.   The winding connections are D (delta), Y (wye), YN (wye with neutral), Z (zigzag), ZN (zigzag with neutral), A (auto transformer). Upper case means the high voltage, lower case mid or low. The high voltage winding always has clock position 0 and is not included in the vector group string.  Some examples: YNy0 (two winding wye to wye with no phase displacement), YNd11 (two winding wye to delta with 330 degrees phase displacement), YNyn0d5 (three winding transformer wye with neutral high voltage, wye with neutral mid voltage and no phase displacement, delta low voltage with 150 degrees displacement).&#xD;&#xA;Phase displacement is defined as the angular difference between the phasors representing the voltages between the neutral point (real or imaginary) and the corresponding terminals of two windings, a positive sequence voltage system being applied to the high-voltage terminals, following each other in alphabetical sequence if they are lettered, or in numerical sequence if they are numbered: the phasors are assumed to rotate in a counter-clockwise sense."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PowerTransformer.vectorGroup"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="vectorGroup"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtectedSwitch" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ProtectedSwitch"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ProtectedSwitch"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="breakingCapacity" eType="#//CurrentFlow"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum fault current a breaking device can break safely under prescribed conditions of use."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#ProtectedSwitch.breakingCapacity"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="breakingCapacity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PU" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#PU"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PU"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PUObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PU:Object"/>
+      <details key="baseType" value="PU"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Reactance" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Reactance (imaginary part of impedance), at rated frequency."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Reactance"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Reactance"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ReactanceObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Reactance:Object"/>
+      <details key="baseType" value="Reactance"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Recloser" eSuperTypes="#//ProtectedSwitch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Pole-mounted fault interrupter with built-in phase and ground relays, current transformer (CT), and supplemental controls."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Recloser"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Recloser"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegulatingCondEq">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#RegulatingCondEq"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RegulatingCondEq"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlEnabled" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the regulation status of the equipment.  True is regulating, false is not regulating."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#RegulatingCondEq.controlEnabled"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="controlEnabled"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regulatingControl" eType="#//RegulatingControl"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The regulating control scheme in which this equipment participates."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#RegulatingCondEq.RegulatingControl"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="RegulatingControl"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegulatingControl">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.&#xD;&#xA;Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.&#xD;&#xA;The specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.&#xD;&#xA;For flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.&#xD;&#xA;The attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:&#xD;&#xA;- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;&#xD;&#xA;- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.&#xD;&#xA;The attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#RegulatingControl"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RegulatingControl"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Resistance" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Resistance (real part of impedance)."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Resistance"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Resistance"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ResistanceObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Resistance:Object"/>
+      <details key="baseType" value="Resistance"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Seconds" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Time, in seconds."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Seconds"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Seconds"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="SecondsObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Seconds:Object"/>
+      <details key="baseType" value="Seconds"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sectionaliser" eSuperTypes="#//Switch">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Automatic switch that will lock open to isolate a faulted section. It may, or may not, have load breaking capability. Its primary purpose is to provide fault sectionalising at locations where the fault current is either too high, or too low, for proper coordination of fuses."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Sectionaliser"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Sectionaliser"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeriesCompensator" eSuperTypes="#//ConductingEquipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SeriesCompensator"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="#//Resistance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence resistance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.r"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="r"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r0" eType="#//Resistance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence resistance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.r0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="r0"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varistorPresent" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Describe if a metal oxide varistor (mov) for over voltage protection is configured in parallel with the series compensator. It is used for short circuit calculations."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.varistorPresent"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="varistorPresent"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varistorRatedCurrent" eType="#//CurrentFlow"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum current the varistor is designed to handle at specified duration. It is used for short circuit calculations and exchanged only if SeriesCompensator.varistorPresent is true.&#xD;&#xA;The attribute shall be a positive value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.varistorRatedCurrent"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="varistorRatedCurrent"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varistorVoltageThreshold"
+        eType="#//Voltage" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The dc voltage at which the varistor starts conducting. It is used for short circuit calculations and exchanged only if SeriesCompensator.varistorPresent is true."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.varistorVoltageThreshold"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="varistorVoltageThreshold"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="#//Reactance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Positive sequence reactance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.x"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="x"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x0" eType="#//Reactance"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Zero sequence reactance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SeriesCompensator.x0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="x0"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SolarGeneratingUnit" eSuperTypes="#//GeneratingUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A solar thermal generating unit, connected to the grid by means of a rotating machine.  This class does not represent photovoltaic (PV) generation."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SolarGeneratingUnit"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SolarGeneratingUnit"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Susceptance" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Imaginary part of admittance."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Susceptance"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Susceptance"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="SusceptanceObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Susceptance:Object"/>
+      <details key="baseType" value="Susceptance"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//ConductingEquipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Switch"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locked" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:&#xD;&#xA;&lt;ul>&#xD;&#xA;&#x9;&lt;li>locked=true and Switch.open=true. The resulting state is open and locked;&lt;/li>&#xD;&#xA;&#x9;&lt;li>locked=false and Switch.open=true. The resulting state is open;&lt;/li>&#xD;&#xA;&#x9;&lt;li>locked=false and Switch.open=false. The resulting state is closed.&lt;/li>&#xD;&#xA;&lt;/ul>"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.locked"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="locked"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="normalOpen" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.normalOpen"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="normalOpen"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="open" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The attribute tells if the switch is considered open when used as input to topology processing."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.open"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="open"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratedCurrent" eType="#//CurrentFlow"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum continuous current carrying capacity in amps governed by the device material and construction.&#xD;&#xA;The attribute shall be a positive value."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.ratedCurrent"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ratedCurrent"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retained" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.retained"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="retained"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switchOnCount" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The switch on count since the switch was last reset or initialized."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.switchOnCount"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="switchOnCount"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switchOnDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The date and time when the switch was last switched on."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.switchOnDate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="switchOnDate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositeSwitch" eType="#//CompositeSwitch"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Composite switch to which this Switch belongs."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.CompositeSwitch"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CompositeSwitch"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switchAction" eType="#//SwitchAction"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Action changing status of this switch."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Switch.SwitchAction"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SwitchAction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwitchAction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Action on switch as a switching step."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#SwitchAction"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SwitchAction"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Temperature" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Value of temperature in degrees Celsius."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Temperature"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Temperature"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="TemperatureObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Temperature:Object"/>
+      <details key="baseType" value="Temperature"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//ACDCTerminal">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Terminal"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phases" eType="#//PhaseCode"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Represents the normal network phasing condition. If the attribute is missing, three phases (ABC) shall be assumed, except for terminals of grounding classes (specializations of EarthFaultCompensator, GroundDisconnector, and Ground) which will be assumed to be N. Therefore, phase code ABCN is explicitly declared when needed, e.g. for star point grounding equipment.&#xD;&#xA;The phase code on terminals connecting same ConnectivityNode or same TopologicalNode as well as for equipment between two terminals shall be consistent."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.phases"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="phases"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bushing" eType="#//Bushing"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.Bushing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Bushing"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="circuit" eType="#//Circuit"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.Circuit"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Circuit"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conductingEquipment" eType="#//ConductingEquipment"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.ConductingEquipment"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ConductingEquipment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectivityNode" eType="#//ConnectivityNode"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The connectivity node to which this terminal connects with zero impedance."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.ConnectivityNode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ConnectivityNode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normalHeadFeeder" eType="#//Feeder"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The feeder that this terminal normally feeds.  Only specified for the terminals at head of feeders."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.NormalHeadFeeder"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NormalHeadFeeder"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topologicalNode" eType="#//TopologicalNode"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unnecessary to model connectivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would probably not be used as an input specification."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Terminal.TopologicalNode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="TopologicalNode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopologicalIsland">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An electrically connected subset of the network. Topological islands can change as the current network state changes, e.g. due to:&#xD;&#xA;- disconnect switches or breakers changing state in a SCADA/EMS.&#xD;&#xA;- manual creation, change or deletion of topological nodes in a planning tool.&#xD;&#xA;Only energised TopologicalNode-s shall be part of the topological island."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#TopologicalIsland"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TopologicalIsland"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angleRefTopologicalNode"
+        eType="#//TopologicalNode" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#TopologicalIsland.AngleRefTopologicalNode"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AngleRefTopologicalNode"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopologicalNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="For a detailed substation model a topological node is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes change as the current network state changes (i.e., switches, breakers, etc. change state).&#xD;&#xA;For a planning model, switch statuses are not used to form topological nodes. Instead they are manually created or deleted in a model builder tool. Topological nodes maintained this way are also called &quot;busses&quot;."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#TopologicalNode"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TopologicalNode"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformerTank" eSuperTypes="#//Equipment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An assembly of two or more coupled windings that transform electrical power between voltage levels. These windings are bound on a common core and placed in the same tank. Transformer tank can be used to model both single-phase and 3-phase transformers."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#TransformerTank"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TransformerTank"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="powerTransformer" eType="#//PowerTransformer"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Bank this transformer belongs to."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.w3.org/ns/sawsdl">
+        <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#TransformerTank.PowerTransformer"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="PowerTransformer"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Voltage" instanceClassName="float">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Electrical voltage, can be both AC and DC."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#Voltage"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Voltage"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#float"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="VoltageObject" instanceClassName="java.lang.Float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Voltage:Object"/>
+      <details key="baseType" value="Voltage"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WireSpacingInfo">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Wire spacing data that associates multiple wire positions with the line segment, and allows to calculate line segment impedances. Number of phases can be derived from the number of associated wire positions whose phase is not neutral."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.w3.org/ns/sawsdl">
+      <details key="modelReference" value="http://iec.ch/TC57/CIM-generic#WireSpacingInfo"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="WireSpacingInfo"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

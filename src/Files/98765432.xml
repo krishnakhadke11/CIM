@@ -1,0 +1,186 @@
+<DistributionSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <GlobalInternalExists>false</GlobalInternalExists>
+    
+    <Substation>
+        <Id>POPLAR-TENT-RET</Id>
+        <Name>POPLAR TENT RET</Name>
+        <ScadaCompositeID />
+        <PermitAreaId>CE</PermitAreaId>
+        <Feeder1 />
+        <AltName />
+        <AreaName />
+        <pSubName>
+            <Name />
+            <R1>0</R1>
+            <RO>0</RO>
+            <X1>0</X1>
+            <Xe>0</Xe>
+        </pSubName>
+        <VVCStatGroup />
+        <Description />
+        <Impedance_R0>2.9198</Impedance_R0>
+        <Impedance_XB>20.539</Impedance_XB>
+        <Impedance_R1>1.2907</Impedance_R1>
+        <Impedance_X1>5.483</Impedance_X1>
+        <Impedance_R2>0</Impedance_R2>
+        <Impedance_X2>0</Impedance_X2>
+        <Address />
+        <SerializationInfo>
+            <ModelingApplication>SubstationEditor</ModelingApplication>
+            <Timestamp>20230322193941</Timestamp>
+        </SerializationInfo>
+        <DisplayGeometries>
+            <DisplayGeometry>
+                <Id />
+                <Name>POPLART</Name>
+                <ScadaCompositeID />
+                <PermitAreald />
+                <Feederl />
+                <DNOM_X1>0</DNOM_X1>
+                <DNOM_X4>42580</DNOM_X4>
+                <DNOM_Y1>0</DNOM_Y1>
+                <DNOM_Y4>-23020</DNOM_Y4>
+            </DisplayGeometry>
+        </DisplayGeometries>
+        <Switch>
+            <Id>e5fdf19b-58c0-420d-afc5-eccb1fdd5403</Id>
+            <Name>TIE_1-2_HT</Name>
+            <ScadaCompositeID />
+            <PermitAreaId>CE</PermitAreaId>
+            <Feederl />
+            <FromNode>3a343a61-fe78-41aa-8722-e9f38af8c5df</FromNode>
+            <ToNode>e3e89003-207f-462d-a1e8-84561af18a62</ToNode>
+            <ToStation />
+            <Phase>ABC</Phase>
+            <Future />
+            <NormallyLooped>false</NormallyLooped>
+            <NormallyParallelLooped>false</NormallyParallelLooped>
+            <NormallyNetworkLooped>false</NormallyNetworkLooped>
+            <NormallyDeenergized>false</NormallyDeenergized>
+            <Suppress_Feeder>false</Suppress_Feeder>
+            <Servicecenter />
+            <Feeder2 />
+            <SecondId />
+            <ExternalInterfaceMember>false</ExternalInterfaceMember>
+            <ExternalInterfaceExternallyOwned>false</ExternalInterfaceExternallyOwned>
+            <FeedMainBound xsi:nil="true" />
+            <SwitchModel>SW_UNK</SwitchModel>
+            <NormallyOpen>false</NormallyOpen>
+            <NOMINAL_FEEDER_ID_SWITCH />
+            <NominalFeederBoundary>false</NominalFeederBoundary>
+            <CompositeSwitchLinkID />
+            <NormOpenPhases />
+            <ComputeFlows>true</ComputeFlows>
+            <Address />
+            <SymbolPlacement>
+                <DSOOverride>0</DSOOverride>
+            </SymbolPlacement>
+        </Switch>
+        <Breaker>
+            <Id>bd0afd0a-74a1-4391-ab74-8df71b609aa0</Id>
+            <Name>BK-1_LT</Name>
+            <ScadaCompositeID />
+            <PermitAreald />
+            <Feeder1 />
+            <FromNode>f4fde2e2-4342-45c4-9fa8-74e0a1e496a1</FromNode>
+            <ToNode>d7593eb3-9068-4865-6968-140b63dd4elc</ToNode>
+            <ToStation />
+            <Phase>ABC</Phase>
+            <Future />
+            <LabelPlacement>
+                <GeometryType>POPLART</GeometryType>
+                <GeometryLevel />
+                <X>8780</X>
+                <Y>-6740</Y>
+                <Rotation>0</Rotation>
+                <FontSize>0</FontSize>
+                <Text />
+                <CharacterRotation>0</CharacterRotation>
+                <ConnectionPoint>Default</ConnectionPoint>
+            </LabelPlacement>
+            <NormallyLooped>false</NormallyLooped>
+            <NormallyParallelLooped>false</NormallyParallelLooped>
+            <NormallyNetworkLooped>false</NormallyNetworkLooped>
+            <NormallyDeenergized>false</NormallyDeenergized>
+            <Suppress_Feeder>false</Suppress_Feeder>
+            <ServiceCenter>KNPC3333</ServiceCenter>
+            <Feeder2 />
+            <SecondId />
+            <ExternalInterfaceMember>false</ExternalInterfaceMember>
+            <ExternalInterfaceExternallyOwned>false</ExternalInterfaceExternallyOwned>
+            <FeedMainBound xsi:nil="true" />
+            <SwitchModel>CB_2500_UNK</SwitchModel>
+            <NormallyOpen>false</NormallyOpen>
+            <NOMINAL_FEEDER_ID_SWITCH />
+            <NominalFeederBoundary>false</NominalFeederBoundary>
+            <CompositeSwitchLinkID />
+            <NormOpenPhases />
+            <ComputeFlows>true</ComputeFlows>
+            <Address />
+            <SymbolPlacement>
+                <GeometryType>POPLART</GeometryType>
+                <GeometryLevel />
+                <X>8480</X>
+                <Y>-6540</Y>
+                <Rotation>90</Rotation>
+                <Size>0</Size>
+            </SymbolPlacement>
+            <DSOOverride>0</DSOOverride>
+            <Grdcapbl>true</Grdcapbl>
+            <PhaseOps>-99</PhaseOps>
+            <GroundOps>-99</GroundOps>
+            <LargestCoordFuse>200</LargestCoordFuse>
+            <Maxint>25000</Maxint>
+            <RelayType>Unknown</RelayType>
+            <UserDefinedRelayType>-1</UserDefinedRelayType>
+            <PhaseTrip>999</PhaseTrip>
+            <GroundTrip>999</GroundTrip>
+            <AltPhaseTrip>0</AltPhaseTrip>
+            <AltGroundTrip>0</AltGroundTrip>
+            <IncidentEnergyCat />
+            <NomDpMode>1</NomDpMode>
+            <NoteTCMS>FALSE</NoteTCMS>
+            <LoadShedDefaultCircuitClass>10</LoadShedDefaultCircuitClass>
+            <HoldFaultIndicationCapable>false</HoldFaultIndicationCapable>
+            <OCRelay />
+        </Breaker>
+        <Bus>
+            <Id>54aec07c-131c-4992-b727-b1f3dc38775a</Id>
+            <Name />
+            <ScadaCompositeID />
+            <PermitAreald />
+            <Feeder1 />
+            <R>0</R>
+            <X>0</X>
+            <Future />
+            <SymbolPlacement>
+                <GeometryType>POPLART</GeometryType>
+                <GeometryLevel />
+                <Vertex>
+                    <X>1240</X>
+                    <Y>-12660</Y>
+                </Vertex>
+                <Vertex>
+                    <X>37360</X>
+                    <Y>-12660</Y>
+                </Vertex>
+            </SymbolPlacement>
+            <Node>fd1651f7-b5d6-4190-ad78-6a1405876f6e</Node>
+            <VoltUnit>-99</VoltUnit>
+            <VnrmHigh>-99</VnrmHigh>
+            <VnrmLow>-99</VnrmLow>
+            <VemrgHigh>-99</VemrgHigh>
+            <VemrgLow>-99</VemrgLow>
+            <VoptNormHigh>-99</VoptNormHigh>
+            <VoptNormLow>-99</VoptNormLow>
+            <Vopt_EmrgHigh>-99</Vopt_EmrgHigh>
+            <Vopt_EmrgLow>-99</Vopt_EmrgLow>
+            <NormallyParallelLooped>false</NormallyParallelLooped>
+            <NormallyNetworkLooped>false</NormallyNetworkLooped>
+            <NormallyLooped>false</NormallyLooped>
+            <NormallyDeenergized>false</NormallyDeenergized>
+            <Suppress_Feeder>false</Suppress_Feeder>
+            <VoltageBase>false</VoltageBase>
+        </Bus>
+    </Substation>
+</DistributionSystem>

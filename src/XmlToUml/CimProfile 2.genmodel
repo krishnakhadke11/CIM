@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+	xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+	xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+	modelDirectory="/DemoApplication/src" modelPluginID="DemoApplication"
+	modelName="CimProfile 2"
+	rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+	importerID="org.eclipse.xsd.ecore.importer" complianceLevel="21.0"
+	copyrightFields="false"
+	operationReflection="true" importOrganizing="true">
+	<foreignModel>../Files/CimProfile%202.xsd</foreignModel>
+	<genPackages prefix="Profile" basePackage="ch.iec.tc57._2007" resource="XML"
+		disposableProviderFactory="true"
+		ecorePackage="profile.ecore#/">
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="profile.ecore#//DCPolarityKind">
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//DCPolarityKind/middle" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//DCPolarityKind/negative" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//DCPolarityKind/positive" />
+		</genEnums>
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="profile.ecore#//GeneratorControlMode">
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlMode/pulse" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlMode/setpoint" />
+		</genEnums>
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="profile.ecore#//GeneratorControlSource">
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlSource/offAGC" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlSource/onAGC" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlSource/plantControl" />
+			<genEnumLiterals
+				ecoreEnumLiteral="profile.ecore#//GeneratorControlSource/unavailable" />
+		</genEnums>
+		<genEnums typeSafeEnumCompatible="false"
+			ecoreEnum="profile.ecore#//PhaseCode">
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/A" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/AB" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/ABC" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/ABCN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/ABN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/AC" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/ACN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/AN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/B" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/BC" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/BCN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/BN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/C" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/CN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/N" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/X" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/XN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/XY" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/XYN" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/none" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s1" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s12" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s12N" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s1N" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s2" />
+			<genEnumLiterals ecoreEnumLiteral="profile.ecore#//PhaseCode/s2N" />
+		</genEnums>
+		<genDataTypes ecoreDataType="profile.ecore#//ActivePower" />
+		<genDataTypes ecoreDataType="profile.ecore#//ActivePowerChangeRate" />
+		<genDataTypes
+			ecoreDataType="profile.ecore#//ActivePowerChangeRateObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//ActivePowerObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//AngleDegrees" />
+		<genDataTypes ecoreDataType="profile.ecore#//AngleDegreesObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Classification" />
+		<genDataTypes ecoreDataType="profile.ecore#//Conductance" />
+		<genDataTypes ecoreDataType="profile.ecore#//ConductanceObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//CurrentFlow" />
+		<genDataTypes ecoreDataType="profile.ecore#//CurrentFlowObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//DCPolarityKindObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//GeneratorControlModeObject" />
+		<genDataTypes
+			ecoreDataType="profile.ecore#//GeneratorControlSourceObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Length" />
+		<genDataTypes ecoreDataType="profile.ecore#//LengthObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Money" />
+		<genDataTypes ecoreDataType="profile.ecore#//PerCent" />
+		<genDataTypes ecoreDataType="profile.ecore#//PerCentObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//PhaseCodeObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//PU" />
+		<genDataTypes ecoreDataType="profile.ecore#//PUObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Reactance" />
+		<genDataTypes ecoreDataType="profile.ecore#//ReactanceObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Resistance" />
+		<genDataTypes ecoreDataType="profile.ecore#//ResistanceObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Seconds" />
+		<genDataTypes ecoreDataType="profile.ecore#//SecondsObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Susceptance" />
+		<genDataTypes ecoreDataType="profile.ecore#//SusceptanceObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Temperature" />
+		<genDataTypes ecoreDataType="profile.ecore#//TemperatureObject" />
+		<genDataTypes ecoreDataType="profile.ecore#//Voltage" />
+		<genDataTypes ecoreDataType="profile.ecore#//VoltageObject" />
+		<genClasses ecoreClass="profile.ecore#//ACDCConverter" />
+		<genClasses ecoreClass="profile.ecore#//ACDCConverterDCTerminal">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACDCConverterDCTerminal/polarity" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACDCConverterDCTerminal/dCConductingEquipment" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//ACDCTerminal">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACDCTerminal/connected" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACDCTerminal/sequenceNumber" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACDCTerminal/busNameMarker" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//ACLineSegment">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/b0ch" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/bch" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/g0ch" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/gch" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/r" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/r0" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/shortCircuitEndTemperature" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/x" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ACLineSegment/x0" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACLineSegment/lineGroundingAction" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACLineSegment/lineJumpingAction" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACLineSegment/perLengthImpedance" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//ACLineSegment/wireSpacingInfo" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//Breaker">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Breaker/inTransitTime" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//Bushing" />
+		<genClasses ecoreClass="profile.ecore#//BusNameMarker" />
+		<genClasses ecoreClass="profile.ecore#//Circuit" />
+		<genClasses ecoreClass="profile.ecore#//CompositeSwitch">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//CompositeSwitch/compositeSwitchType" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//ConductingEquipment" />
+		<genClasses ecoreClass="profile.ecore#//Conductor">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Conductor/length" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//ConnectivityNode" />
+		<genClasses ecoreClass="profile.ecore#//ConnectivityNodeContainer" />
+		<genClasses ecoreClass="profile.ecore#//Cut">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Cut/lengthFromTerminal1" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Cut/aCLineSegment" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Cut/cutAction" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//CutAction" />
+		<genClasses ecoreClass="profile.ecore#//DCBaseTerminal">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//DCBaseTerminal/dCNode" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//DCBaseTerminal/dCTopologicalNode" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//DCConductingEquipment" />
+		<genClasses ecoreClass="profile.ecore#//DCNode" />
+		<genClasses ecoreClass="profile.ecore#//DCTerminal">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//DCTerminal/dCConductingEquipment" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//DCTopologicalNode" />
+		<genClasses ecoreClass="profile.ecore#//Disconnector" />
+		<genClasses ecoreClass="profile.ecore#//Equipment">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Equipment/aggregate" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Equipment/inService" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Equipment/networkAnalysisEnabled" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Equipment/normallyInService" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Equipment/equipmentContainer" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//EquipmentContainer" />
+		<genClasses ecoreClass="profile.ecore#//Feeder" />
+		<genClasses ecoreClass="profile.ecore#//Flowgate" />
+		<genClasses ecoreClass="profile.ecore#//Fuse" />
+		<genClasses ecoreClass="profile.ecore#//GeneratingUnit">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/allocSpinResP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/autoCntrlMarginP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/baseP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/controlDeadband" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/controlPulseHigh" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/controlPulseLow" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/controlResponseRate" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/efficiency" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/genControlMode" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/genControlSource" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/governorMPL" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/governorSCD" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/highControlLimit" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/initialP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/longPF" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/lowControlLimit" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/lowerRampRate" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/maxEconomicP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/maximumAllowableSpinningReserve" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/maxOperatingP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/minEconomicP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/minimumOffTime" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/minOperatingP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/modelDetail" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/nominalP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/normalPF" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/penaltyFactor" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/raiseRampRate" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/ratedGrossMaxP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/ratedGrossMinP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/ratedNetMaxP" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/shortPF" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/startupCost" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/startupTime" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/tieLinePF" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/totalEfficiency" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//GeneratingUnit/variableCost" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//GeneratingUnit/genUnitOpSchedule" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//GenUnitOpSchedule" />
+		<genClasses ecoreClass="profile.ecore#//GroundAction" />
+		<genClasses ecoreClass="profile.ecore#//GroundDisconnector" />
+		<genClasses ecoreClass="profile.ecore#//Jumper">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Jumper/jumperAction" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//JumperAction" />
+		<genClasses ecoreClass="profile.ecore#//LoadBreakSwitch" />
+		<genClasses ecoreClass="profile.ecore#//MktSwitch" />
+		<genClasses ecoreClass="profile.ecore#//MktTerminal">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//MktTerminal/flowgate" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//PerLengthImpedance" />
+		<genClasses ecoreClass="profile.ecore#//PowerTransformer">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/beforeShCircuitHighestOperatingCurrent" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/beforeShCircuitHighestOperatingVoltage" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/beforeShortCircuitAnglePf" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/highSideMinOperatingU" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/isPartOfGeneratorUnit" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/operationalValuesConsidered" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//PowerTransformer/vectorGroup" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//ProtectedSwitch">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//ProtectedSwitch/breakingCapacity" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//Recloser" />
+		<genClasses ecoreClass="profile.ecore#//RegulatingCondEq">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//RegulatingCondEq/controlEnabled" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//RegulatingCondEq/regulatingControl" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//RegulatingControl" />
+		<genClasses ecoreClass="profile.ecore#//Sectionaliser" />
+		<genClasses ecoreClass="profile.ecore#//SeriesCompensator">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/r" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/r0" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/varistorPresent" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/varistorRatedCurrent" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/varistorVoltageThreshold" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/x" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//SeriesCompensator/x0" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//SolarGeneratingUnit" />
+		<genClasses ecoreClass="profile.ecore#//Switch">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/locked" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/normalOpen" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/open" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/ratedCurrent" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/retained" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/switchOnCount" />
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Switch/switchOnDate" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Switch/compositeSwitch" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Switch/switchAction" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//SwitchAction" />
+		<genClasses ecoreClass="profile.ecore#//Terminal">
+			<genFeatures createChild="false"
+				ecoreFeature="ecore:EAttribute profile.ecore#//Terminal/phases" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/bushing" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/circuit" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/conductingEquipment" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/connectivityNode" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/normalHeadFeeder" />
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//Terminal/topologicalNode" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//TopologicalIsland">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//TopologicalIsland/angleRefTopologicalNode" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//TopologicalNode" />
+		<genClasses ecoreClass="profile.ecore#//TransformerTank">
+			<genFeatures property="None" children="true" createChild="true"
+				ecoreFeature="ecore:EReference profile.ecore#//TransformerTank/powerTransformer" />
+		</genClasses>
+		<genClasses ecoreClass="profile.ecore#//WireSpacingInfo" />
+	</genPackages>
+</genmodel:GenModel>
